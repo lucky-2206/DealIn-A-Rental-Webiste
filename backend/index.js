@@ -12,7 +12,7 @@ const app = express()
 //mongdb connect
 mongoose.set('strictQuery',false)
 mongoose.connect(process.env.MONGO_URL,()=> console.log('Mongodb Started Successfully'))
-
+app.use('/images',express.static('public/images'))
 //routes and middlewares
 app.use(cors())
 app.use(express.json())
